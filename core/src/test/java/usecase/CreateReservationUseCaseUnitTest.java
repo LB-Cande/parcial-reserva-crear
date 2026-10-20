@@ -46,7 +46,7 @@ public class CreateReservationUseCaseUnitTest {
         Reserva result = createReservationUseCase.registrar(
                 UUID.fromString("7e8ad860-716d-4b86-9643-430870caefe7"),
                 "test@email.com",
-                LocalDate.of(2026, 10, 20),
+                LocalDate.of(2026, 10, 25),
                 4,
                 "ACTIVA"
         );
@@ -68,7 +68,7 @@ public class CreateReservationUseCaseUnitTest {
                 ()-> createReservationUseCase.registrar(
                         UUID.fromString("7e8ad860-716d-4b86-9643-430870caefe7"),
                     "test@email.com",
-                    LocalDate.of(2026, 10, 20),
+                    LocalDate.of(2026, 10, 25),
                     4,
                     "ACTIVA"
                 )
