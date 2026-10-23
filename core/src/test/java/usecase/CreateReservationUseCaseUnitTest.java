@@ -25,14 +25,6 @@ public class CreateReservationUseCaseUnitTest {
     @Mock
     private ReservationRepository reservationRepository;
 
-        /*Reserva reservation = Reserva.instance(
-                UUID.fromString("7e8ad860-716d-4b86-9643-430870caefe7"),
-                "test@email.com",
-                LocalDate.of(2026, 10, 20),
-                4,
-                "ACTIVA"
-        );
-*/
     @Test
     void register_CreateReservation_Success(){
         // Arrange
@@ -59,8 +51,6 @@ public class CreateReservationUseCaseUnitTest {
         // Arrange
         CreateReservationUseCase createReservationUseCase = new CreateReservationUseCase(reservationRepository);
         when(reservationRepository.existe("test@email.com",LocalDate.of(2026,10,25)))
-                .thenReturn(true);
-        when(reservationRepository.guardarReserva(org.mockito.ArgumentMatchers.any(Reserva.class)))
                 .thenReturn(true);
 
         // Act y Assert
@@ -89,7 +79,7 @@ public class CreateReservationUseCaseUnitTest {
                 ()-> createReservationUseCase.registrar(
                     UUID.fromString("7e8ad860-716d-4b86-9643-430870caefe7"),
                     "test@email.com",
-                    LocalDate.of(2026, 10, 20),
+                    LocalDate.of(2026, 10, 25),
                     4,
                     "ACTIVA"
                 )
